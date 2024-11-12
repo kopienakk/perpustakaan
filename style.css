@@ -1,27 +1,24 @@
 :root {
     --white: #ffffff;
-    --light-gray: #f5f2e9;    /* Warmer light color for paper feel */
-    --dark-gray: #2b2620;     /* Warm dark brown */
-    --dark-bg: #1a1814;       /* Dark wood color */
-    --light-bg: #e6dfd1;      /* Light parchment color */
-    --light-shadow: rgba(139, 109, 76, 0.15);  /* Warm shadow */
+    --light-gray: #f5f2e9;
+    --dark-gray: #2b2620;
+    --dark-bg: #1a1814;
+    --light-bg: #e6dfd1;
+    --light-shadow: rgba(139, 109, 76, 0.15);
     --dark-shadow: rgba(0, 0, 0, 0.2);
-    --highlight: #8b6d4c;     /* Leather brown highlight */
-    --text-light: #f5f2e9;    /* Warm light text */
-    --text-dark: #2b2620;     /* Warm dark text */
+    --highlight: #8b6d4c;
+    --text-light: #ffffff; /* Menjadi putih lebih terang */
+    --text-dark: #2b2620;
 }
-
 
 /* background Gradient */
 body.bg-gradient {
-    background: linear-gradient(to right, var(--light-bg), #d4caba);  /* Warmer gradient */
+    background: linear-gradient(to right, var(--light-bg), #d4caba);
     min-height: 100vh;
     padding: 20px;
     display: flex;
     align-items: center;
 }
-
-
 
 /* main card & neumorphic card */
 .card,
@@ -30,18 +27,18 @@ body.bg-gradient {
 .book-card {
     background: var(--light-gray);
     border-radius: 8px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
-                -5px -5px 15px rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15),
+                -5px -5px 20px rgba(255, 255, 255, 0.2);
 }
 
-.card
-.book-card
+.card,
+.book-card,
 .main-card {
     padding: 15px;
 }
 
 .main-card {
-    background: rgba(var(--white), 0.9);
+    background: var(--white);
 }
 
 .neumorphic-button,
@@ -65,15 +62,15 @@ body.bg-gradient {
 .neumorphic-button {
     border-radius: 10px;
     box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.1),
-                -1px -1px 13px rgba(255, 255, 255, 0.8);
+                -1px -1px 13px rgba(255, 255, 255, 0.2);
 }
 
 .neumorphic-button:hover,
 .book-card:hover,
 .shadow-neumorphic:hover {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15),
-                -3px -3px 10px rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
+                -3px -3px 10px rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
 }
 
 .theme-dark {
@@ -86,8 +83,8 @@ body.bg-gradient {
 .theme-dark .main-card {
     background-color: var(--dark-bg);
     color: var(--text-light);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3),
-                -5px -5px 15px rgba(255, 255, 255, 0.05);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3),
+                -8px -8px 20px rgba(255, 255, 255, 0.1);
 }
 .theme-dark .neumorphic-button,
 .theme-dark .neumorphic-input {
@@ -124,7 +121,7 @@ body.bg-gradient {
 
 .swal2-popup {
     font-size: 1.1rem;
-    border-radius: 12px ;
+    border-radius: 12px;
 }
 
 * {
@@ -145,39 +142,16 @@ body.bg-gradient {
 .floating-book {
     position: absolute;
     color: var(--highlight);
-    opacity: 0.2;
-    font-size: 2rem;
+    opacity: 0.4; /* Menambah kejelasan */
+    font-size: 1.5rem; /* Ukuran lebih kecil */
     animation: float 15s linear infinite;
 }
 
-.floating-book:nth-child(1) {
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.floating-book:nth-child(2) {
-    left: 30%;
-    animation-delay: -3s;
-    font-size: 2.5rem;
-}
-
-.floating-book:nth-child(3) {
-    left: 50%;
-    animation-delay: -6s;
-    font-size: 1.8rem;
-}
-
-.floating-book:nth-child(4) {
-    left: 70%;
-    animation-delay: -9s;
-    font-size: 2.2rem;
-}
-
-.floating-book:nth-child(5) {
-    left: 90%;
-    animation-delay: -12s;
-    font-size: 1.9rem;
-}
+.floating-book:nth-child(1) { animation-delay: 0s; }
+.floating-book:nth-child(2) { animation-delay: -4s; }
+.floating-book:nth-child(3) { animation-delay: -8s; }
+.floating-book:nth-child(4) { animation-delay: -12s; }
+.floating-book:nth-child(5) { animation-delay: -16s; }
 
 @keyframes float {
     0% {
@@ -230,7 +204,7 @@ html, body {
 
 /* Add custom scrollbar styling */
 .container::-webkit-scrollbar {
-    width: 8px;
+    width: 6px; /* Ukuran scrollbar lebih kecil di perangkat mobile */
 }
 
 .container::-webkit-scrollbar-track {
@@ -278,7 +252,7 @@ html, body {
 
 /* Dark theme adjustments */
 .theme-dark .neumorphic-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);  /* Warna putih dengan sedikit transparansi */
+    color: rgba(255, 255, 255, 0.7);  /* Warna putih dengan sedikit transparansi */
 }
 
 /* Add styles for filter select */
@@ -315,11 +289,12 @@ html, body {
 
 /* Make badges more interactive */
 .badge {
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .badge:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    background-color: var(--highlight); /* Tambahkan highlight pada hover */
 }
 
 /* Responsive adjustments */
@@ -332,5 +307,14 @@ html, body {
     .book-stats .badge {
         margin-left: 0 !important;
         margin-top: 0.3rem;
+    }
+
+    /* Mengurangi ukuran font untuk floating books */
+    .floating-book {
+        font-size: 1.2rem;
+    }
+
+    .card, .main-card, .book-card {
+        padding: 10px;
     }
 }
